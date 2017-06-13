@@ -1,0 +1,9 @@
+.inline-list{
+    display: inline;
+    margin-right: 30px;
+}
+.hover-primary{
+    color: $primary-color;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
