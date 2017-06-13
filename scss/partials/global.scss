@@ -7,3 +7,14 @@
     cursor: pointer;
     transition: .3s ease-in-out;
 }
+.custom-text1{
+    font-family: $font-extras;
+    font-size: 16px;
+}
+.custom-text2{
+    font-family: $font-title;
+    font-size: 14px;
+    font-weight: 100;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
