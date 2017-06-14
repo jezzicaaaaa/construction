@@ -33,11 +33,73 @@ header{
         }
     }
 }
-.main-nav{
+
+.home{
+    position: relative;
+    height: 200px;
+    
+    .slick-slider{
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) );
+
+        .slick-prev{
+            margin-left: 200px;
+            z-index: 150;
+            font-size: 50px;
+        }
+        .slick-next{
+            margin-right: 200px;
+        }
+    }
+    .a-slide{
+        background: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) );
+        z-index: 2;
+        img{
+            max-width: 100%;
+            height: auto;
+            z-index: -1;
+            overflow: hidden;
+            
+            .container{
+                position: relative;
+            }
+        }
+
+    }
+    .home-content{
+        text-align: center;
+        position: absolute;
+        top: 0;
+        z-index: 10;
+        font-family: $font-title;
+        margin-top: 300px;
+        h2{
+            font-weight: 800;
+            font-size: 115px;
+            letter-spacing: 5px;
+        }
+        h3{
+            font-weight: 700;
+            font-size: 24px;
+            letter-spacing: 2px;
+        }
+        button{
+            @include button;
+            margin-top: 100px;
+        }
+        button:hover{
+            @include button-hover;
+        }
+    }
+    .main-nav{
     height: auto;
     padding: 50px 0;
-    position: relative;
-    z-index: 150;  
+    position:relative;
+    text-align: center;
+    top: 50px;
+    margin: auto;
+    z-index: 999999;  
     transition: .2s ease-in-out; 
     @extend .custom-text2;
     
@@ -81,8 +143,8 @@ header{
                 @extend .hover-primary;
             }
         }
-
     }
+    
 }
 .main-nav-scrolled{
     height: 70px;
@@ -91,35 +153,5 @@ header{
     position: fixed;
     width: 100%;
     top: 0;
-}
-.home{
-    position: relative;
-    background-image: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) ),url(../assets/homepage-1.jpg);
-    background-position: center;
-    background-size: cover;
-    height: 95vh;
-
-    .home-content{
-        margin-top: 20vh;
-        text-align: center;
-        font-family: $font-title;
-        h1{
-            font-weight: 800;
-            font-size: 115px;
-            letter-spacing: 5px;
-        }
-        h2{
-            font-weight: 700;
-            font-size: 24px;
-            letter-spacing: 2px;
-        }
-        button{
-            @include button;
-            margin-top: 100px;
-        }
-        button:hover{
-            @include button-hover;
-        }
-    }
-    
-}
+    left: 0;
+}}
