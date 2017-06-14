@@ -3,15 +3,45 @@
     padding: 18px 40px;
     border: none;
     border-radius: 3px;
+    font-family: $font-title;
+    text-transform: uppercase;
+    color: #fff;
 }
 @mixin button-hover{
     background-color: black;
     cursor: pointer;
-    transition: .2s ease-in-out;
+    transition: .3s ease-in-out;
 }
-
+@mixin sec-title{
+    font-size: 25px;
+    font-family: $font-title;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+@mixin h5{
+    font-size: 18px;
+    font-family: $font-title;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    line-height: 1.8;
+}
+@mixin paragraphs{
+    font-family: $font-extras;
+    line-height: 1.66667;
+    font-weight: 300;
+    color: $description-color;
+    font-size: 18px;
+    line-height: 1.7;
+}
+@mixin h5-hover{
+    color: $primary-color;
+    cursor: pointer;
+    transition: .3s ease-in-out;
+}
 
 $header-color: #272727;
 $primary-color: #e6aa09;
+$description-color: #888;
 $font-extras: 'Lato', sans-serif;
 $font-title: "Montserrat",Helvetica,sans-serif;

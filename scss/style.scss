@@ -36,6 +36,7 @@ header{
 
 .home{
     text-align: center;
+    color: #fff;
 
     .main-nav{
     padding: 50px 0;
@@ -112,7 +113,7 @@ header{
         }
         .slick-dots{
             position: absolute;
-            bottom: 50px;
+            bottom: 150px;
             color: #FFF;
         }
         .slick-dots li button:before{
@@ -123,20 +124,23 @@ header{
         .a-slide{
             background: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) );
             z-index: 555555;
+            position: relative;
+            min-height: 800px;
             img{
                 max-width: 100%;
-                height: auto;
                 z-index: -1;
-
+                filter: brightness(60%);
+                position: absolute;
             }
         }
     }
     .home-content{
-        position: absolute;
-        top: 0;
+                    width:70%;
+            margin:auto;
+            text-align: center;
+            margin-top:10%;
         z-index: 10;
         font-family: $font-title;
-        margin-top: 300px;
         h2{
             font-weight: 800;
             font-size: 115px;
@@ -154,5 +158,72 @@ header{
         button:hover{
             @include button-hover;
         }
+    }
+}
+.services{
+    padding: 100px 0;
+    .service-list{
+        margin-top: 50px;
+    }
+    h2{
+        @include sec-title;
+        text-align: center;
+    }
+    .row{
+        text-align: left;
+    }
+    h5{
+        @include h5;
+    }
+    p{
+        @include paragraphs;
+    }
+
+}
+.history{
+    background-color: #f8f8f8;
+    padding: 100px 0;
+    h2{
+        @include sec-title;
+        margin-bottom: 50px;
+    }
+    h5{
+        @include h5;
+        margin-bottom: 20px;
+    }
+    p{
+        @include paragraphs;
+    }
+    button{
+        @include button;
+        margin-top: 50px;
+    }
+    button:hover{
+        @include button-hover;
+    }
+    .left{
+        padding: 0 15px;
+    }
+}
+.project{
+    overflow-x: hidden;
+    img{
+        filter: brightness(60%);
+    }
+}
+.news{
+    padding: 100px 0;
+    h2{
+        @include sec-title;
+        text-align: center;
+    }
+    h5{
+        @include h5;
+    }
+    p{
+        @include paragraphs;
+    }
+    .news-details{
+        margin: 50px 0;
     }
 }

@@ -14,7 +14,8 @@ $(function(){
 
 
 $('.slick-slider').slick({
-  dots:true
+  dots:true,
+  autoplay: false,
 });
 
 });
