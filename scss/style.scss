@@ -35,40 +35,103 @@ header{
 }
 
 .home{
-    position: relative;
-    height: 200px;
+    text-align: center;
+
+    .main-nav{
+    padding: 50px 0;
+    position: absolute;
+    z-index: 99999999999;  
+    transition: .2s ease-in-out; 
+    @extend .custom-text2;
+    
+        .flex{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            ul{
+                margin: auto 0;
+            }
+            ul li{
+                list-style: none;
+                display: inline;
+                margin: 0 10px;
+                
+            }
+            ul li:nth-child(1){
+                color: $primary-color;
+                i{
+                    color: $primary-color;
+                }
+            }
+            p{
+                margin: auto 0;
+                i{
+                    font-size: 16px;
+                }
+            }
+            ul li:hover{ 
+                @extend .hover-primary;
+            }
+            ul li:hover i{
+                @extend .hover-primary;
+                transform: rotate(180deg);
+            }
+            p{
+                i:hover{
+                    @extend .hover-primary;
+                }
+            }
+        }
+    }
+    .main-nav-scrolled{
+    overflow: hidden;
+    height: 70px;
+    padding: 10px;
+    background: $header-color;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    right: 0;
+    }
     
     .slick-slider{
-        position: relative;
-        overflow: hidden;
-        background: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) );
-
         .slick-prev{
             margin-left: 200px;
             z-index: 150;
             font-size: 50px;
         }
+        .slick-prev:before {
+            font-size: 40px;
+        }
+        .slick-next:before {
+            font-size: 40px;
+        }
+        
         .slick-next{
             margin-right: 200px;
         }
-    }
-    .a-slide{
-        background: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) );
-        z-index: 2;
-        img{
-            max-width: 100%;
-            height: auto;
-            z-index: -1;
-            overflow: hidden;
-            
-            .container{
-                position: relative;
+        .slick-dots{
+            position: absolute;
+            bottom: 50px;
+            color: #FFF;
+        }
+        .slick-dots li button:before{
+            font-size: 15px;
+            color: white;
+        }
+    
+        .a-slide{
+            background: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) );
+            z-index: 555555;
+            img{
+                max-width: 100%;
+                height: auto;
+                z-index: -1;
+
             }
         }
-
     }
     .home-content{
-        text-align: center;
         position: absolute;
         top: 0;
         z-index: 10;
@@ -92,66 +155,4 @@ header{
             @include button-hover;
         }
     }
-    .main-nav{
-    height: auto;
-    padding: 50px 0;
-    position:relative;
-    text-align: center;
-    top: 50px;
-    margin: auto;
-    z-index: 999999;  
-    transition: .2s ease-in-out; 
-    @extend .custom-text2;
-    
-    .flex{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: auto;
-        margin: auto;
-
-        ul{
-            margin: auto 0;
-        }
-        ul li{
-            list-style: none;
-            display: inline;
-            margin: 0 10px;
-            
-        }
-        ul li:nth-child(1){
-            color: $primary-color;
-            i{
-                color: $primary-color;
-            }
-        }
-        p{
-            margin: auto 0;
-            i{
-                font-size: 16px;
-            }
-        }
-        ul li:hover{ 
-            @extend .hover-primary;
-        }
-        ul li:hover i{
-            @extend .hover-primary;
-            transform: rotate(180deg);
-        }
-        p{
-            i:hover{
-                @extend .hover-primary;
-            }
-        }
-    }
-    
 }
-.main-nav-scrolled{
-    height: 70px;
-    padding: 10px;
-    background: $header-color;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    left: 0;
-}}
