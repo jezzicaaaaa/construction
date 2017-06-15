@@ -113,7 +113,7 @@ header{
         }
         .slick-dots{
             position: absolute;
-            bottom: 70px;
+            bottom: 40px;
             color: #FFF;
         }
         .slick-dots li button:before{
@@ -122,16 +122,16 @@ header{
         }
     
         .a-slide{
-            background: linear-gradient( rgba(0.4, 0, 0, 0.4), rgba(0.4, 0, 0, 0.4) );
             z-index: 555555;
             position: relative;
+            max-width: 100%;
+            height: auto;
             min-height: 600px;
-            img{
-                max-width: 100%;
-                z-index: -1;
-                filter: brightness(60%);
-                position: absolute;
-            }
+            background-position:center;
+            background-size:cover;
+        }
+        .a-slide:nth-child(1){
+            background-image: url(assets/rsz_homepage-1.jpg);
         }
     }
     .home-content{
@@ -168,15 +168,55 @@ header{
     h2{
         @include sec-title;
         text-align: center;
-    }
-    .row{
-        text-align: left;
+        margin-bottom: 30px;
     }
     h5{
         @include h5;
+        margin-bottom: 30px;
     }
     p{
         @include paragraphs;
+    }
+    h5:hover{
+        @include h5-hover;
+    }
+    .three-sec{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: 20px 0;
+    }
+    .text{
+        margin-left: 20px;
+        display: flex;
+        flex-direction: column;
+    }
+    i{
+        text-align: center;
+        color: #fff;
+        background-color: $primary-color;
+        border-radius: 50%;
+        padding: 30px;
+        width: 100px;
+        height: 100px;
+        vertical-align: middle;
+        line-height: 50px;
+        font-size: 45PX;
+    }
+    .three-sec:hover i:after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        font-size: 30px;
+        left: -1px;
+        right: -1px;
+        top: -1px;
+        bottom: -1px;
+        transition: .3s;
+        z-index: -1;
+        transform: translateX(-100%);
+        border-radius: 50%;
+        background: #272727;
     }
 
 }
@@ -206,10 +246,79 @@ header{
     }
 }
 .project{
+    height: 800px;
     overflow-x: hidden;
-    img{
-        filter: brightness(60%);
+    .row{
+        position: relative;
     }
+
+    .flip-container {
+        -webkit-perspective: 1000;
+        -moz-perspective: 1000;
+        -o-perspective: 1000;
+        perspective: 1000;
+        border: 1px solid #ccc;
+    }
+
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		-webkit-transform: rotateY(180deg);
+		-moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+		transform: rotateY(180deg);
+	}
+
+    .flipper {
+        -webkit-transition: 0.6s;
+        -webkit-transform-style: preserve-3d;
+        -moz-transition: 0.6s;
+        -moz-transform-style: preserve-3d;
+        -o-transition: 0.6s;
+        -o-transform-style: preserve-3d;
+        transition: 0.6s;
+        transform-style: preserve-3d;
+        position: relative;
+    }
+
+    .front, .back {
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        -o-backface-visibility: hidden;
+        backface-visibility: hidden;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+
+    .back {
+        -webkit-transform: rotateY(180deg);
+        -moz-transform: rotateY(180deg);
+        -o-transform: rotateY(180deg);
+        transform: rotateY(180deg);
+        background: #f8f8f8;
+    }
+
+    .text{
+        position: absolute;
+        top:0;
+        left: 0;
+    }
+
+    h5{
+        color: #fff;
+        @include h5;
+
+    }
+    p{
+        @include paragraphs;
+        color: #fff;
+    }
+    img{
+        max-width: 100%;
+        margin: 0;
+        position: relative;
+        filter: brightness(60%)
+    }
+    
 }
 .news{
     padding: 100px 0;
@@ -225,5 +334,100 @@ header{
     }
     .news-details{
         margin: 50px 0;
+    }
+    h5:hover{
+        @extend .hover-primary;
+    }
+    h6{
+        @include h6;
+        margin: 20px 0;
+    }
+    span{
+        color: $primary-color;
+        margin-right: 20px;
+    }
+    span:hover{
+        color: black;
+    }
+    h6:hover{
+        @extend .hover-primary;
+    }
+}
+.final-section{
+    background-color: #333;
+    color: #fff;
+    padding: 50px 0;
+    h5{
+        @include h5;
+        margin-bottom: 30px;
+    }
+    p{
+        @include paragraphs;
+        font-size: 16px;
+    }
+    .first-col{
+        img{
+            margin-top: 10px;
+            margin-bottom: 30px;
+        }
+    }
+    .sec-col{
+        p{
+            color: $primary-color;
+        }
+        p:hover{
+            @extend .hover-primary;
+            color: #fff;
+        }
+    }
+    .third-col{
+        p{
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        h6{
+            @include h6;
+        }
+    }
+    .fourth-col{
+        p{
+            margin-bottom: 20px;
+        }
+
+        .email{
+            color: $primary-color
+        }
+        .email:hover{
+            @extend .hover-primary;
+            color: #fff;
+        }
+
+        .phone{
+            @extend .hover-primary;
+        }
+    }
+}
+footer{
+    background-color: $header-color;
+    padding: 15px 0;
+    color: $description-color;
+    font-family: $font-extras;
+    .row{
+        margin: 0;
+        padding: 0;
+    }
+    p{
+        display: inline-block;
+        margin: 0;
+    }
+    .icons{
+        float: right;
+        color: #fff;
+        i{
+            margin: 0 7px;
+        }
+        i:hover{
+            @extend .hover-primary
+        }
     }
 }
