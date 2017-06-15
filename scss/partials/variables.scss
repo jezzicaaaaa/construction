@@ -39,8 +39,15 @@
     cursor: pointer;
     transition: .3s ease-in-out;
 }
+@mixin h6{
+    font-size: 14px;
+    font-style: italic;
+    color: $description-color;
+    font-family: $font-extras;
+}
 
 $header-color: #272727;
+$bgColor: #333;
 $primary-color: #e6aa09;
 $description-color: #888;
 $font-extras: 'Lato', sans-serif;
