@@ -18,4 +18,12 @@ $('.slick-slider').slick({
   autoplay: false,
 });
 
+
+
+// /*! Fades in page on load */
+// $('.home-content').css('display', 'none');
+// $('.home-content').fadeIn(500);
+
+// });
+
 });
