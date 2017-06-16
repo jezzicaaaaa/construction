@@ -37,6 +37,9 @@ header{
 .home{
     text-align: center;
     color: #fff;
+    .hamburger, .cross{
+        display: none;
+    }
 
     .main-nav{
     padding: 50px 0;
@@ -113,7 +116,7 @@ header{
         }
         .slick-dots{
             position: absolute;
-            bottom: 40px;
+            bottom: 20px;
             color: #FFF;
         }
         .slick-dots li button:before{
@@ -159,7 +162,8 @@ header{
         }
         button{
             @include button;
-            margin-top: 100px;
+            margin-top: 70px;
+            margin-bottom: 30px;
         }
         button:hover{
             @include button-hover;
@@ -192,9 +196,10 @@ header{
 }
 .services{
     padding: 100px 0;
-    .service-list{
-        margin-top: 50px;
+    .row{
+        flex-wrap: wrap;
     }
+
     h2{
         @include sec-title;
         text-align: center;
@@ -510,3 +515,74 @@ footer{
     }
 }
 
+@media (max-width: 1199px){
+    .home{
+        .main-nav{
+            img{
+                width: 20%;
+            }
+        }
+        .home-content{
+            h2{
+                font-size: 85px;
+            }
+            h3{
+                font-size: 20px;
+            }
+        }
+
+    }
+    .services{
+        .three-sec{
+            margin: 0;
+        }
+    }
+    .project{
+        height: auto;
+        padding-bottom: 100px;
+        .item{
+            margin: 150px 0;
+        }
+    }
+}
+@media(max-width:991px){
+    header{
+        display: none;
+    }
+    .home{
+        .main-nav{
+            display: none;
+        }
+        .hamburger{
+            background:none;
+            position:absolute;
+            top:0;
+            right:0;
+            line-height:45px;
+            padding:5px 15px 0px 15px;
+            color:#999;
+            border:0;
+            font-size:1.4em;
+            font-weight:bold;
+            cursor:pointer;
+            outline:none;
+            z-index:10000000000000;
+        }
+        .cross{
+            background:none;
+            position:absolute;
+            top:0px;
+            right:0;
+            padding:7px 15px 0px 15px;
+            color:#999;
+            border:0;
+            font-size:3em;
+            line-height:65px;
+            font-weight:bold;
+            cursor:pointer;
+            outline:none;
+            z-index:10000000000000;
+        }
+
+    }
+}
