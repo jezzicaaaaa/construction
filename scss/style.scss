@@ -166,28 +166,28 @@ header{
         }
     }
 
-    .home-content {
-        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-        -moz-animation: fadein 2s; /* Firefox < 16 */
-        animation: fadein 2s;
-    }
+    // .home-content {
+    //     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+    //     -moz-animation: fadein 2s; /* Firefox < 16 */
+    //     animation: fadein 2s;
+    // }
 
-    @keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-    }
+    // @keyframes fadein {
+    // from { opacity: 0; }
+    // to   { opacity: 1; }
+    // }
 
-    /* Firefox < 16 */
-    @-moz-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
+    // /* Firefox < 16 */
+    // @-moz-keyframes fadein {
+    //     from { opacity: 0; }
+    //     to   { opacity: 1; }
+    // }
 
-    /* Safari, Chrome and Opera > 12.1 */
-    @-webkit-keyframes fadein {
-        from { opacity: 0; }
-        to   { opacity: 1; }
-    }
+    // /* Safari, Chrome and Opera > 12.1 */
+    // @-webkit-keyframes fadein {
+    //     from { opacity: 0; }
+    //     to   { opacity: 1; }
+    // }
 
 }
 .services{
@@ -272,7 +272,7 @@ header{
     padding: 100px 0;
     h2{
         @include sec-title;
-        margin-bottom: 50px;
+        margin-bottom: 40px;
     }
     h5{
         @include h5;
@@ -283,7 +283,7 @@ header{
     }
     button{
         @include button;
-        margin-top: 50px;
+        margin-top: 30px;
     }
     button:hover{
         @include button-hover;
@@ -293,26 +293,36 @@ header{
     }
 }
 .project{
-    height: 800px;
-    overflow-x: hidden;
-    .row{
-        position: relative;
-    }
+    height: 750px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: stretch;
 
-    .flip-container {
+
+    .flip {
         -webkit-perspective: 1000;
         -moz-perspective: 1000;
         -o-perspective: 1000;
         perspective: 1000;
-        border: 1px solid #ccc;
     }
 
-	.flip-container:hover .flipper, .flip-container.hover .flipper {
+	.flip:hover .flipper{
 		-webkit-transform: rotateY(180deg);
 		-moz-transform: rotateY(180deg);
         -o-transform: rotateY(180deg);
 		transform: rotateY(180deg);
 	}
+
+    .flip, .front, .back {
+        width: 100%;
+        img{
+            width: 100%;        }
+    }
+    .item{
+        margin: 50px 0;
+    }
+    
 
     .flipper {
         -webkit-transition: 0.6s;
@@ -336,36 +346,57 @@ header{
         left: 0;
     }
 
+    .front {
+        z-index: 2;
+
+        img{
+            filter: brightness(30%);
+            opacity: 0.9;
+        }
+
+        h5{
+            position: absolute;
+            top: 50%;
+            transform: translateY(-150%);
+            padding: 0 30px;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+
+    }
+
     .back {
         -webkit-transform: rotateY(180deg);
         -moz-transform: rotateY(180deg);
         -o-transform: rotateY(180deg);
         transform: rotateY(180deg);
-        background: #f8f8f8;
-    }
+        img{
+            filter: brightness(40%);
+            opacity: 0.9;
+        }
 
+        
+
+    }
     .text{
         position: absolute;
-        top:0;
+        top: 10%;
         left: 0;
-    }
+        right: 0;
+        text-align: center;
+        padding: 20px;
 
+        p{
+            @include paragraphs;
+            color: #fff;
+        }
+    }
     h5{
         color: #fff;
         @include h5;
+    }
 
-    }
-    p{
-        @include paragraphs;
-        color: #fff;
-    }
-    img{
-        max-width: 100%;
-        margin: 0;
-        position: relative;
-        filter: brightness(60%)
-    }
-    
 }
 .news{
     padding: 100px 0;
@@ -478,6 +509,4 @@ footer{
         }
     }
 }
-
-
 
