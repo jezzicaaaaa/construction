@@ -1,4 +1,4 @@
-@import 'partials/setup.scss';
+    @import 'partials/setup.scss';
 @import 'partials/variables.scss';
 @import 'partials/global.scss';
 
@@ -37,9 +37,6 @@ header{
 .home{
     text-align: center;
     color: #fff;
-    .hamburger, .cross{
-        display: none;
-    }
 
     .main-nav{
     padding: 50px 0;
@@ -109,7 +106,7 @@ header{
         }
         .slick-next:before {
             font-size: 40px;
-        }
+        }            text-align: center;
         
         .slick-next{
             margin-right: 100px;
@@ -198,6 +195,7 @@ header{
     padding: 100px 0;
     .row{
         flex-wrap: wrap;
+        display: flex;
     }
 
     h2{
@@ -218,9 +216,10 @@ header{
     .three-sec{
         display: flex;
         flex-direction: row;
-        margin: 20px 0;
+        margin-bottom: 50px;
         background: #fff;
         z-index: 1;
+
     }
     .text{
         margin-left: 20px;
@@ -545,24 +544,26 @@ footer{
         }
     }
 }
-@media(max-width:991px){
+@media (max-width:991px){
     header{
         display: none;
-    }
-    .home{
+        .header{
+            display: none;
+        }
         .main-nav{
             display: none;
         }
         .hamburger{
             background:none;
+            display: inline;
             position:absolute;
-            top:0;
-            right:0;
+            vertical-align: middle;
+            left:0;
             line-height:45px;
             padding:5px 15px 0px 15px;
-            color:#999;
+            color:#fff;
             border:0;
-            font-size:1.4em;
+            font-size:30px;;
             font-weight:bold;
             cursor:pointer;
             outline:none;
@@ -570,11 +571,13 @@ footer{
         }
         .cross{
             background:none;
+            display: inline;
+            vertical-align: middle;
             position:absolute;
             top:0px;
-            right:0;
+            left:0;
             padding:7px 15px 0px 15px;
-            color:#999;
+            color:#fff;
             border:0;
             font-size:3em;
             line-height:65px;
@@ -583,6 +586,37 @@ footer{
             outline:none;
             z-index:10000000000000;
         }
+        img{
+            display: inline;
+            margin-left: 65px;
+        }
+    }
+    .home{
+        .main-nav{
+            display: none;
+        }
 
+    }
+    .services{
+
+    }
+    .history{
+        .left{
+            margin: auto;
+        }
+        button{
+            margin-bottom: 50px;
+        }
+        img{
+            margin: auto;
+        }
+    }
+}
+
+@media (min-width:992px){
+    header{
+        .drop-down{
+            display: none;
+        }
     }
 }
