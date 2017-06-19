@@ -546,12 +546,22 @@ footer{
 }
 @media (max-width:991px){
     header{
-        display: none;
+        height: 60px;
         .header{
             display: none;
         }
+        .drop-down{
+            position: fixed;
+            height: 100px;
+            vertical-align: middle;
+            display: inline;
+        }
         .main-nav{
             display: none;
+        }
+        .menu{
+            width: 150px;
+            display: inline-block;
         }
         .hamburger{
             background:none;
@@ -559,11 +569,10 @@ footer{
             position:absolute;
             vertical-align: middle;
             left:0;
-            line-height:45px;
             padding:5px 15px 0px 15px;
             color:#fff;
             border:0;
-            font-size:30px;;
+            font-size:30px;
             font-weight:bold;
             cursor:pointer;
             outline:none;
@@ -574,14 +583,13 @@ footer{
             display: inline;
             vertical-align: middle;
             position:absolute;
-            top:0px;
             left:0;
+            top: -15px;
             padding:7px 15px 0px 15px;
             color:#fff;
             border:0;
-            font-size:3em;
+            font-size:30px;
             line-height:65px;
-            font-weight:bold;
             cursor:pointer;
             outline:none;
             z-index:10000000000000;
