@@ -29,7 +29,7 @@ $( ".hamburger" ).click(function() {
 });
 
 $( ".cross" ).click(function() {
-  $( ".menu" ).removeClass( "open-nav", function(h) {
+  $( ".menu" ).removeClass( "open-nav", function() {
       $( ".cross" ).hide();
       $( ".hamburger" ).show();
       });

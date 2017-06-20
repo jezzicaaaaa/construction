@@ -41,7 +41,7 @@ header{
     .main-nav{
     padding: 50px 0;
     position: absolute;
-    z-index: 1000;  
+    z-index: 20;  
     transition: .2s ease-in-out; 
     @extend .custom-text2;
     
@@ -122,7 +122,7 @@ header{
         }
     
         .a-slide{
-            z-index: 100;
+            z-index: -10;
             position: relative;
             max-width: 100%;
             height: auto;
@@ -167,28 +167,28 @@ header{
         }
     }
 
-    // .home-content {
-    //     -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
-    //     -moz-animation: fadein 2s; /* Firefox < 16 */
-    //     animation: fadein 2s;
-    // }
+    .home-content {
+        -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
+        -moz-animation: fadein 2s; /* Firefox < 16 */
+        animation: fadein 2s;
+    }
 
-    // @keyframes fadein {
-    // from { opacity: 0; }
-    // to   { opacity: 1; }
-    // }
+    @keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+    }
 
-    // /* Firefox < 16 */
-    // @-moz-keyframes fadein {
-    //     from { opacity: 0; }
-    //     to   { opacity: 1; }
-    // }
+    /* Firefox < 16 */
+    @-moz-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
 
-    // /* Safari, Chrome and Opera > 12.1 */
-    // @-webkit-keyframes fadein {
-    //     from { opacity: 0; }
-    //     to   { opacity: 1; }
-    // }
+    /* Safari, Chrome and Opera > 12.1 */
+    @-webkit-keyframes fadein {
+        from { opacity: 0; }
+        to   { opacity: 1; }
+    }
 
 }
 .services{
@@ -218,7 +218,7 @@ header{
         flex-direction: row;
         margin-bottom: 50px;
         background: #fff;
-        z-index: 1;
+        z-index: 30;
 
     }
     .text{
@@ -238,7 +238,7 @@ header{
         line-height: 50px;
         font-size: 45px;
         margin: 0;
-        z-index: 10;
+        z-index: 400;
     }
     i:after{
         content: '';
@@ -252,7 +252,7 @@ header{
         top: 0px;
         bottom: 0px;
         transition: .3s;
-        z-index: -5;
+        z-index: -10;
         transform: translateX(-50%);
         border-radius: 50%;
         animation-play-state: play;
@@ -321,7 +321,8 @@ header{
     .flip, .front, .back {
         width: 100%;
         img{
-            width: 100%;        }
+            width: 100%;
+        }
     }
     .item{
         margin: 50px 0;
@@ -547,13 +548,12 @@ footer{
 @media (max-width:991px){
     header{
         position: fixed;
-        z-index: 1000;
+        z-index: 100;
         width: 100%;
         .header{
             display: none;
         }
         .drop-down{
-            height: 100px;
             vertical-align: middle;
             display: inline;
         }
@@ -573,7 +573,7 @@ footer{
             font-weight:bold;
             cursor:pointer;
             outline:none;
-            z-index:10000000000000;
+            z-index:100;
         }
         .cross{
             background:none;
@@ -589,7 +589,7 @@ footer{
             line-height:65px;
             cursor:pointer;
             outline:none;
-            z-index:10000000000000;
+            z-index:100;
         }
         img{
             display: inline;
@@ -600,6 +600,16 @@ footer{
         .main-nav{
             display: none;
         }
+        .home-content{
+            margin-top: 150px;
+            h2{
+                font-size: 50px;
+                letter-spacing: .8px;
+            }
+            h3{
+                font-size: 16px;
+            }
+        }
 
     }
     .services{
@@ -608,6 +618,10 @@ footer{
             text-align: center;
             width: 70%;
             margin: auto;
+            margin-bottom: 30px;
+            i{
+                margin: auto;
+            }
         }
 
     }
@@ -623,9 +637,21 @@ footer{
         }
     }
 }
+.news{
+    .news-details{
+        width: 75%; 
+        text-align: center;
+        margin: 30px auto;
+
+        img{
+            margin: auto;
+        }
+    }
+}
 .open-nav{
     width: 25%;
     display: block; 
+    z-index: 110;
 }
 @media (min-width:992px){
     header{
