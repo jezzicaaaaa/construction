@@ -1,4 +1,4 @@
-    @import 'partials/setup.scss';
+@import 'partials/setup.scss';
 @import 'partials/variables.scss';
 @import 'partials/global.scss';
 
@@ -41,7 +41,7 @@ header{
     .main-nav{
     padding: 50px 0;
     position: absolute;
-    z-index: 99999999999;  
+    z-index: 1000;  
     transition: .2s ease-in-out; 
     @extend .custom-text2;
     
@@ -122,7 +122,7 @@ header{
         }
     
         .a-slide{
-            z-index: 555555;
+            z-index: 100;
             position: relative;
             max-width: 100%;
             height: auto;
@@ -546,22 +546,19 @@ footer{
 }
 @media (max-width:991px){
     header{
-        height: 60px;
+        position: fixed;
+        z-index: 1000;
+        width: 100%;
         .header{
             display: none;
         }
         .drop-down{
-            position: fixed;
             height: 100px;
             vertical-align: middle;
             display: inline;
         }
         .main-nav{
             display: none;
-        }
-        .menu{
-            width: 150px;
-            display: inline-block;
         }
         .hamburger{
             background:none;
@@ -606,6 +603,12 @@ footer{
 
     }
     .services{
+        .three-sec{
+            flex-direction: column;
+            text-align: center;
+            width: 70%;
+            margin: auto;
+        }
 
     }
     .history{
@@ -620,7 +623,10 @@ footer{
         }
     }
 }
-
+.open-nav{
+    width: 25%;
+    display: block; 
+}
 @media (min-width:992px){
     header{
         .drop-down{

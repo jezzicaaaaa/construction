@@ -22,17 +22,19 @@ $('.slick-slider').slick({
 $( ".cross" ).hide();
 $( ".menu" ).hide();
 $( ".hamburger" ).click(function() {
-  $( ".menu" ).slideToggle( "fast", function() {
+  $( ".menu" ).addClass( "open-nav", function() {
     $( ".hamburger" ).hide();
     $( ".cross" ).show();
   });
 });
 
 $( ".cross" ).click(function() {
-  $( ".menu" ).slideToggle( "fast", function() {
+  $( ".menu" ).removeClass( "open-nav", function(h) {
       $( ".cross" ).hide();
       $( ".hamburger" ).show();
       });
   });
+
+
 
 });
