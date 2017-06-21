@@ -20,21 +20,19 @@ $('.slick-slider').slick({
 
 
 $( ".cross" ).hide();
-$( ".menu" ).hide();
-$( ".hamburger" ).click(function() {
-  $( ".menu" ).addClass( "open-nav", function() {
+$( ".hamburger" ).click( function(e) {
+  $( ".menu" ).addClass( "open-nav" );
     $( ".hamburger" ).hide();
     $( ".cross" ).show();
-  });
+    e.preventDefault();
 });
 
-$( ".cross" ).click(function() {
-  $( ".menu" ).removeClass( "open-nav", function() {
+$( ".cross" ).click(function(e) {
+  $( ".menu" ).addClass( "close-nav" );
       $( ".cross" ).hide();
+      $(".menu").hide();
       $( ".hamburger" ).show();
-      });
-  });
-
-
+      e.preventDefault();
+});
 
 });

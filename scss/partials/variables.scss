@@ -45,6 +45,37 @@
     color: $description-color;
     font-family: $font-extras;
 }
+@mixin i-services{
+    text-align: center;
+    color: #fff;
+    background-color: $primary-color;
+    border-radius: 50%;
+    padding: 30px;
+    width: 100px;
+    height: 100px;
+    vertical-align: middle;
+    line-height: 50px;
+    font-size: 45px;
+    margin: 0;
+    z-index: 400;
+}
+@mixin i-services-after{
+    content: '';
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    font-size: 30px;
+    left: -1px;
+    right: -1px;
+    top: 0px;
+    bottom: 0px;
+    transition: .3s;
+    z-index: -10;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    animation-play-state: play;
+}
+
 
 $header-color: #272727;
 $bgColor: #333;

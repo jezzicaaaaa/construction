@@ -18,3 +18,18 @@
     text-transform: uppercase;
     letter-spacing: 1px;
 }
+.nav-responsive{
+    background:none;
+    display: inline;
+    position:absolute;
+    vertical-align: middle;
+    left:0;
+    padding:5px 15px 0px 15px;
+    color:#fff;
+    border:0;
+    font-size:30px;
+    font-weight:bold;
+    cursor:pointer;
+    outline:none;
+    z-index:100;
+}

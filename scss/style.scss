@@ -33,6 +33,28 @@ header{
         }
     }
 }
+.menu{
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 100;
+    background-color: $header-color;
+    top: 70px;
+    left: 0;
+    overflow-x: hidden;
+    padding-top: 30px;
+    color: #fff;
+    @extend .custom-text2;
+    border-top: 0.1px solid $description-color;
+
+    li{
+        margin-bottom: 10px;
+        padding: 10px 20px;
+    }
+    li:hover{
+        background-color: $primary-color;
+    }
+}
 
 .home{
     text-align: center;
@@ -85,20 +107,20 @@ header{
         }
     }
     .main-nav-scrolled{
-    overflow: hidden;
-    height: 70px;
-    padding: 10px;
-    background: $header-color;
-    position: fixed;
-    width: 100%;
-    top: 0;
-    right: 0;
+        overflow-x: hidden;
+        height: 70px;
+        padding: 10px;
+        background: $header-color;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        right: 0;
     }
     
     .slick-slider{
         .slick-prev{
             margin-left: 100px;
-            z-index: 150;
+            z-index: 1;
             font-size: 50px;
         }
         .slick-prev:before {
@@ -106,8 +128,7 @@ header{
         }
         .slick-next:before {
             font-size: 40px;
-        }            text-align: center;
-        
+        }            
         .slick-next{
             margin-right: 100px;
         }
@@ -120,7 +141,6 @@ header{
             font-size: 15px;
             color: white;
         }
-    
         .a-slide{
             z-index: -10;
             position: relative;
@@ -141,7 +161,6 @@ header{
         }
     }
     .home-content{
-        width: auto;
         margin:auto;
         text-align: center;
         margin-top:10%;
@@ -218,7 +237,7 @@ header{
         flex-direction: row;
         margin-bottom: 50px;
         background: #fff;
-        z-index: 30;
+        z-index: 10;
 
     }
     .text{
@@ -227,35 +246,10 @@ header{
         flex-direction: column;
     }
     i{
-        text-align: center;
-        color: #fff;
-        background-color: $primary-color;
-        border-radius: 50%;
-        padding: 30px;
-        width: 100px;
-        height: 100px;
-        vertical-align: middle;
-        line-height: 50px;
-        font-size: 45px;
-        margin: 0;
-        z-index: 400;
+        @include i-services;
     }
     i:after{
-        content: '';
-        display: inline-block;
-        width: 100px;
-        height: 100px;
-        position: absolute;
-        font-size: 30px;
-        left: -1px;
-        right: -1px;
-        top: 0px;
-        bottom: 0px;
-        transition: .3s;
-        z-index: -10;
-        transform: translateX(-50%);
-        border-radius: 50%;
-        animation-play-state: play;
+        @include i-services-after;
     }
     .three-sec:hover i:after{
         animation: myfirst .5s forwards;
@@ -380,9 +374,6 @@ header{
             filter: brightness(40%);
             opacity: 0.9;
         }
-
-        
-
     }
     .text{
         position: absolute;
@@ -434,6 +425,9 @@ header{
     }
     span:hover{
         color: black;
+    }
+    .row{
+        flex-direction: row;
     }
 }
 .final-section{
@@ -510,7 +504,7 @@ footer{
             margin: 0 7px;
         }
         i:hover{
-            @extend .hover-primary
+            @extend .hover-primary;
         }
     }
 }
@@ -578,15 +572,14 @@ footer{
         .cross{
             background:none;
             display: inline;
-            vertical-align: middle;
             position:absolute;
+            vertical-align: middle;
             left:0;
-            top: -15px;
-            padding:7px 15px 0px 15px;
+            padding:5px 15px 0px 15px;
             color:#fff;
             border:0;
             font-size:30px;
-            line-height:65px;
+            font-weight:bold;
             cursor:pointer;
             outline:none;
             z-index:100;
@@ -596,6 +589,7 @@ footer{
             margin-left: 65px;
         }
     }
+
     .home{
         .main-nav{
             display: none;
@@ -616,11 +610,13 @@ footer{
         .three-sec{
             flex-direction: column;
             text-align: center;
-            width: 70%;
             margin: auto;
             margin-bottom: 30px;
             i{
                 margin: auto;
+            }
+            i:after{
+                display: none;
             }
         }
 
@@ -639,7 +635,6 @@ footer{
 }
 .news{
     .news-details{
-        width: 75%; 
         text-align: center;
         margin: 30px auto;
 
@@ -649,9 +644,13 @@ footer{
     }
 }
 .open-nav{
-    width: 25%;
-    display: block; 
+    width: 40%;
     z-index: 110;
+    transition: .3s ease-in-out;
+})
+.close-nav{
+    width: 0%;
+    transition: .3s ease-in-out;
 }
 @media (min-width:992px){
     header{
