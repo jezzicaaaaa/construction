@@ -18,21 +18,21 @@ $('.slick-slider').slick({
   autoplay: false,
 });
 
+//hide cross on page load
+  $( ".cross" ).hide();
 
-$( ".cross" ).hide();
-$( ".hamburger" ).click( function(e) {
-  $( ".menu" ).addClass( "open-nav" );
+  $( ".hamburger" ).click( function(e) {
+    $( ".menu" ).toggleClass( "open-nav" );
     $( ".hamburger" ).hide();
     $( ".cross" ).show();
-    e.preventDefault();
-});
+    console.log($(".menu"));
+  });
 
-$( ".cross" ).click(function(e) {
-  $( ".menu" ).addClass( "close-nav" );
-      $( ".cross" ).hide();
-      $(".menu").hide();
-      $( ".hamburger" ).show();
-      e.preventDefault();
-});
+  $( ".cross" ).click(function() {
+    $( ".menu" ).toggleClass( "open-nav" );
+    $( ".cross" ).hide();
+    $( ".hamburger" ).show();
+    console.log($(".menu"));
+  });
 
 });

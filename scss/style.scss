@@ -35,7 +35,7 @@ header{
 }
 .menu{
     height: 100%;
-    width: 0;
+    width: 0px;
     position: fixed;
     z-index: 100;
     background-color: $header-color;
@@ -46,7 +46,11 @@ header{
     color: #fff;
     @extend .custom-text2;
     border-top: 0.1px solid $description-color;
-
+    transition: .15s ease-in-out;
+    &.open-nav{
+        width: 200px;
+        z-index: 110;
+    }
     li{
         margin-bottom: 10px;
         padding: 10px 20px;
@@ -291,13 +295,6 @@ header{
     }
 }
 .project{
-    height: 750px;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-content: stretch;
-
-
     .flip {
         -webkit-perspective: 1000;
         -moz-perspective: 1000;
@@ -391,6 +388,9 @@ header{
     h5{
         color: #fff;
         @include h5;
+    }
+    .item{
+        height: 200px;
     }
 
 }
@@ -643,15 +643,8 @@ footer{
         }
     }
 }
-.open-nav{
-    width: 40%;
-    z-index: 110;
-    transition: .3s ease-in-out;
-})
-.close-nav{
-    width: 0%;
-    transition: .3s ease-in-out;
-}
+
+
 @media (min-width:992px){
     header{
         .drop-down{
