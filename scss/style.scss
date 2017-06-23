@@ -6,7 +6,9 @@ header{
     @extend .custom-text1;
     background-color: $header-color;
     color: #fff;
-    padding: 15px 0;
+    padding: 8px 0;
+    height: auto;
+    top: 0;
     .header{
         display: flex;
         justify-content: space-between;
@@ -39,7 +41,7 @@ header{
     position: fixed;
     z-index: 100;
     background-color: $header-color;
-    top: 70px;
+    top: 55px;
     left: 0;
     overflow-x: hidden;
     padding-top: 30px;
@@ -48,7 +50,7 @@ header{
     border-top: 0.1px solid $description-color;
     transition: .15s ease-in-out;
     &.open-nav{
-        width: 200px;
+        width: 250px;
         z-index: 110;
     }
     li{
@@ -57,6 +59,9 @@ header{
     }
     li:hover{
         background-color: $primary-color;
+    }
+    i{
+        float: right;
     }
 }
 
@@ -112,11 +117,12 @@ header{
     }
     .main-nav-scrolled{
         overflow-x: hidden;
-        height: 70px;
-        padding: 10px;
         background: $header-color;
         position: fixed;
+        padding: 20px;
+        vertical-align: middle;
         width: 100%;
+        height: 75px;
         top: 0;
         right: 0;
     }
@@ -295,6 +301,7 @@ header{
     }
 }
 .project{
+    overflow-x: hidden;
     .flip {
         -webkit-perspective: 1000;
         -moz-perspective: 1000;
@@ -312,11 +319,11 @@ header{
     .flip, .front, .back {
         width: 100%;
         img{
-            width: 100%;
+            max-width: 100%;
         }
     }
     .item{
-        margin: 50px 0;
+        min-height: 330px;
     }
     
 
@@ -388,9 +395,6 @@ header{
     h5{
         color: #fff;
         @include h5;
-    }
-    .item{
-        height: 200px;
     }
 
 }
@@ -534,9 +538,6 @@ footer{
     .project{
         height: auto;
         padding-bottom: 100px;
-        .item{
-            margin: 150px 0;
-        }
     }
 }
 @media (max-width:991px){
@@ -544,12 +545,16 @@ footer{
         position: fixed;
         z-index: 100;
         width: 100%;
+
         .header{
             display: none;
         }
         .drop-down{
             vertical-align: middle;
             display: inline;
+            img{
+                vertical-align: middle;
+            }
         }
         .main-nav{
             display: none;
@@ -560,6 +565,7 @@ footer{
             position:absolute;
             vertical-align: middle;
             left:0;
+            top: 0;
             padding:5px 15px 0px 15px;
             color:#fff;
             border:0;
@@ -575,6 +581,7 @@ footer{
             position:absolute;
             vertical-align: middle;
             left:0;
+            top: 0;
             padding:5px 15px 0px 15px;
             color:#fff;
             border:0;
@@ -610,10 +617,9 @@ footer{
         .three-sec{
             flex-direction: column;
             text-align: center;
-            margin: auto;
-            margin-bottom: 30px;
+            margin-bottom: 15px;
             i{
-                margin: auto;
+                margin: 0 auto;
             }
             i:after{
                 display: none;
@@ -632,18 +638,85 @@ footer{
             margin: auto;
         }
     }
-}
-.news{
-    .news-details{
-        text-align: center;
-        margin: 30px auto;
+    .project{
+        .item{
+            height: 361px;
+        }
+    }
+    .news{
+        .news-details{
+            text-align: center;
+            margin: 30px auto;
 
-        img{
-            margin: auto;
+            img{
+                margin: auto;
+            }
         }
     }
 }
+@media (max-width:767px){
+    header{
+        .drop-down{
+            img{
+                width: auto;
+            }
+        }
+    }
+    .home{
+        .slick-prev:before {
+            font-size: 20px;
+            margin-left: -70px;
+        }
+        .slick-next:before {
+            margin-right: -110px;
+            font-size: 20px;
+        } 
 
+        .home-content{
+            h2{
+                font-size: 35px;
+            }
+            h3{
+                font-size: 14px;
+                padding: 0 20px;
+            }
+            button{
+                font-size: 12px;
+            }
+        }
+    }
+    .services{
+        padding: 25px;
+    }
+     .project{
+         padding: 25px;
+         .item{
+             margin-bottom: 35px;
+             height: auto;
+             text-align: center;
+         }
+         img{
+             margin: auto;
+         }
+     }
+     .news{
+         padding: 15px;
+     }
+     .final-section{
+         padding: 10px 0;
+     }
+     footer{
+         .row{
+             margin: auto;
+             text-align: center;
+             display: flex;
+             flex-direction: column;
+         }
+         .icons{
+             margin-top: 10px;
+         }
+     }
+}
 
 @media (min-width:992px){
     header{

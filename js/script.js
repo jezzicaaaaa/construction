@@ -20,19 +20,18 @@ $('.slick-slider').slick({
 
 //hide cross on page load
   $( ".cross" ).hide();
-
   $( ".hamburger" ).click( function(e) {
     $( ".menu" ).toggleClass( "open-nav" );
     $( ".hamburger" ).hide();
     $( ".cross" ).show();
-    console.log($(".menu"));
+
   });
 
   $( ".cross" ).click(function() {
     $( ".menu" ).toggleClass( "open-nav" );
     $( ".cross" ).hide();
     $( ".hamburger" ).show();
-    console.log($(".menu"));
+
   });
 
 });
